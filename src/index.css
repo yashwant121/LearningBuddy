@@ -8,53 +8,53 @@ All colors MUST be HSL for accessibility and consistency.
 
 @layer base {
   :root {
-    /* Base colors - soft, calming background */
-    --background: 210 100% 97%;
-    --foreground: 220 15% 20%;
+    /* Base colors - soft pastel background inspired by cartoon style */
+    --background: 200 30% 96%;
+    --foreground: 220 20% 25%;
 
-    /* Card colors - clean white cards with subtle shadows */
+    /* Card colors - soft pastel cards */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 220 20% 25%;
 
     /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 220 20% 25%;
 
-    /* Learning colors - bright, encouraging primary colors */
-    --primary: 220 100% 50%;           /* Bright blue for main actions */
+    /* Learning colors - cartoon-style pastels with personality */
+    --primary: 210 80% 65%;           /* Soft blue like sky */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 100% 60%;          /* Sunny yellow for secondary actions */
-    --secondary-foreground: 220 15% 20%;
+    --secondary: 45 85% 70%;          /* Warm yellow like sunshine */
+    --secondary-foreground: 220 20% 25%;
 
-    --success: 120 70% 45%;            /* Green for positive feedback */
+    --success: 120 50% 55%;            /* Gentle green like grass */
     --success-foreground: 0 0% 100%;
 
-    --warning: 35 100% 55%;            /* Orange for attention */
+    --warning: 25 90% 65%;            /* Friendly orange like carrot */
     --warning-foreground: 0 0% 100%;
 
-    --game: 280 85% 60%;               /* Purple for games */
+    --game: 280 60% 70%;               /* Soft purple like flowers */
     --game-foreground: 0 0% 100%;
 
     /* Muted colors for subtle elements */
-    --muted: 210 40% 95%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 210 25% 92%;
+    --muted-foreground: 220 20% 55%;
 
-    /* Accent colors */
-    --accent: 340 80% 60%;             /* Pink for highlights */
-    --accent-foreground: 0 0% 100%;
+    /* Accent colors - playful pink like the reference images */
+    --accent: 340 70% 75%;             /* Soft pink for highlights */
+    --accent-foreground: 220 20% 25%;
 
     /* Destructive colors - softer red for less anxiety */
-    --destructive: 0 70% 55%;
+    --destructive: 0 50% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border and input colors */
-    --border: 220 25% 85%;
-    --input: 220 25% 90%;
-    --ring: 220 100% 50%;
+    /* Border and input colors - softer, more rounded feel */
+    --border: 220 20% 88%;
+    --input: 220 15% 94%;
+    --ring: 210 80% 65%;
 
-    /* Border radius - more rounded for kid-friendly feel */
-    --radius: 1rem;
+    /* Border radius - extra rounded for cartoon feel */
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 

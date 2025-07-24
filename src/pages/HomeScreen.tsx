@@ -1,9 +1,10 @@
-import { Calendar, BookOpen, Gamepad2 } from "lucide-react";
+import { Calendar, BookOpen, Gamepad2, Heart, Settings } from "lucide-react";
 import { LearningButton } from "@/components/LearningButton";
 import { Header } from "@/components/Header";
+import { Button } from "@/components/ui/button";
 
 interface HomeScreenProps {
-  onNavigate: (screen: 'schedule' | 'flashcards' | 'game') => void;
+  onNavigate: (screen: 'schedule' | 'flashcards' | 'game' | 'calming' | 'settings') => void;
 }
 
 export const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
@@ -45,6 +46,27 @@ export const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
             onClick={() => onNavigate('game')}
             variant="game"
           />
+
+          <LearningButton
+            icon={<Heart />}
+            title="Calming Mode"
+            subtitle="Relax and breathe"
+            onClick={() => onNavigate('calming')}
+            variant="success"
+          />
+        </div>
+
+        {/* Settings Button */}
+        <div className="text-center mt-8">
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => onNavigate('settings')}
+            className="gap-3"
+          >
+            <Settings className="h-6 w-6" />
+            Settings
+          </Button>
         </div>
 
         <div className="text-center mt-12">
