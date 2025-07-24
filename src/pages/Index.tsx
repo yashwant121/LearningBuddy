@@ -1,14 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { HomeScreen } from "./HomeScreen";
+import { ScheduleScreen } from "./ScheduleScreen";
+import { FlashcardsScreen } from "./FlashcardsScreen";
+import { MatchingGameScreen } from "./MatchingGameScreen";
+
+type Screen = 'home' | 'schedule' | 'flashcards' | 'game';
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [currentScreen, setCurrentScreen] = useState<Screen>('home');
+
+  const navigateToScreen = (screen: Screen) => {
+    setCurrentScreen(screen);
+  };
+
+  const navigateHome = () => {
+    setCurrentScreen('home');
+  };
+
+  const navigateBack = () => {
+    setCurrentScreen('home');
+  };
+
+  switch (currentScreen) {
+    case 'schedule':
+      return <ScheduleScreen onBack={navigateBack} onHome={navigateHome} />;
+    
+    case 'flashcards':
+      return <FlashcardsScreen onBack={navigateBack} onHome={navigateHome} />;
+    
+    case 'game':
+      return <MatchingGameScreen onBack={navigateBack} onHome={navigateHome} />;
+    
+    default:
+      return <HomeScreen onNavigate={navigateToScreen} />;
+  }
 };
 
 export default Index;

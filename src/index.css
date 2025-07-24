@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* My Learning Buddy Design System - Kid-friendly, accessible colors
+All colors MUST be HSL for accessibility and consistency.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - soft, calming background */
+    --background: 210 100% 97%;
+    --foreground: 220 15% 20%;
 
+    /* Card colors - clean white cards with subtle shadows */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 20%;
 
+    /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Learning colors - bright, encouraging primary colors */
+    --primary: 220 100% 50%;           /* Bright blue for main actions */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 100% 60%;          /* Sunny yellow for secondary actions */
+    --secondary-foreground: 220 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --success: 120 70% 45%;            /* Green for positive feedback */
+    --success-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --warning: 35 100% 55%;            /* Orange for attention */
+    --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --game: 280 85% 60%;               /* Purple for games */
+    --game-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Muted colors for subtle elements */
+    --muted: 210 40% 95%;
+    --muted-foreground: 220 15% 50%;
 
-    --radius: 0.5rem;
+    /* Accent colors */
+    --accent: 340 80% 60%;             /* Pink for highlights */
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive colors - softer red for less anxiety */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input colors */
+    --border: 220 25% 85%;
+    --input: 220 25% 90%;
+    --ring: 220 100% 50%;
+
+    /* Border radius - more rounded for kid-friendly feel */
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,84 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Larger base font size for accessibility */
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* Kid-friendly typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-wide;
+  }
+
+  /* Large touch targets for accessibility */
+  button, [role="button"], input, select, textarea {
+    min-height: 60px;
+    min-width: 60px;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply ring-4 ring-ring ring-offset-2 ring-offset-background outline-none;
+  }
+
+  /* Custom animations for encouragement */
+  @keyframes bounce-gentle {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-4px);
+    }
+    60% {
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-2deg);
+    }
+    20% {
+      transform: rotateZ(2deg);
+    }
+    25% {
+      transform: rotateZ(-2deg);
+    }
+    30% {
+      transform: rotateZ(2deg);
+    }
+    35% {
+      transform: rotateZ(-2deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--success) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px hsl(var(--success) / 0);
+    }
+  }
+
+  /* Animation classes */
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
   }
 }
